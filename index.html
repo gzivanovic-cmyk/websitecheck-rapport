@@ -4,14 +4,149 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
 <title>Websitecheck · GO 4IT-Studio</title>
-<style>body { font-family: system-ui, -apple-system, sans-serif; color: #0B1020; background: #fff; } main { max-width: 560px; margin: 14vh auto; padding: 0 16px; line-height: 1.55; } a { color: #3346D3; }</style>
+<meta name="description" content="Gratis websitecheck van GO 4IT-Studio: drie heldere cijfers en een persoonlijk verbeterplan voor je website.">
+<link rel="icon" href="https://www.go4itstudio.com/favicon.svg" type="image/svg+xml">
+<style>
+@font-face { font-family: 'PJS'; src: url(/assets/plusjakartasans-latin-var.woff2) format('woff2'); font-weight: 200 800; font-display: swap; }
+:root { --ink: #0B1020; --ink-2: #3B4258; --muted: #636A80; --line: #E4E7EE; --soft: #F3F5F9; --cobalt: #3346D3; --cobalt-soft: #E9ECFD;
+  --goed: #0C8A4A; --beter: #C26A00; --zwak: #C9362B; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'PJS', system-ui, -apple-system, sans-serif; color: var(--ink); background: #fff; line-height: 1.6; font-size: 17px; -webkit-font-smoothing: antialiased; }
+a { color: var(--cobalt); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+header { position: sticky; top: 0; z-index: 5; background: rgba(255,255,255,.88); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 12px; }
+header img { height: 24px; display: block; }
+.btn { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 13px 22px; font-weight: 700; font-size: 15.5px; text-decoration: none; transition: transform .2s ease, background .2s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn-dark { background: var(--ink); color: #fff; } .btn-licht { background: #fff; color: var(--ink); border: 1px solid var(--line); }
+header .btn { padding: 9px 16px; font-size: 14px; white-space: nowrap; }
+.hero { padding: clamp(56px, 9vw, 110px) 0 clamp(40px, 6vw, 72px); background: radial-gradient(900px 460px at 85% -80px, var(--cobalt-soft), transparent 70%); }
+.tag { display: inline-block; font-size: 12.5px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--cobalt); margin-bottom: 14px; }
+h1 { font-size: clamp(36px, 6.4vw, 64px); line-height: 1.04; letter-spacing: -.035em; max-width: 14ch; font-weight: 780; }
+h1 em { font-style: normal; color: var(--cobalt); }
+.lead { font-size: clamp(17px, 2vw, 20px); color: var(--ink-2); max-width: 46ch; margin: 22px 0 30px; }
+.acties { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.klein { font-size: 14px; color: var(--muted); }
+.link-noot { margin-top: 22px; display: inline-flex; gap: 10px; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; font-size: 14.5px; color: var(--ink-2); }
+section { padding: clamp(48px, 7vw, 88px) 0; }
+h2 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -.03em; line-height: 1.12; margin-bottom: 14px; }
+.sub { color: var(--ink-2); max-width: 56ch; margin-bottom: 32px; }
+.drie { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cijfer { border: 1px solid var(--line); border-radius: 20px; padding: 24px; background: #fff; }
+.cijfer svg { width: 64px; height: 64px; display: block; margin-bottom: 14px; }
+.cijfer h3 { font-size: 19px; letter-spacing: -.01em; margin-bottom: 6px; }
+.cijfer p { color: var(--ink-2); font-size: 15.5px; }
+.grijs { background: var(--soft); }
+.krijg { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; list-style: none; }
+.krijg li { display: flex; gap: 12px; align-items: flex-start; background: #fff; border-radius: 16px; padding: 16px 18px; }
+.krijg li b { display: block; }
+.krijg li span { color: var(--ink-2); font-size: 15.5px; }
+.vink { flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--cobalt-soft); color: var(--cobalt); display: grid; place-items: center; font-weight: 800; font-size: 14px; margin-top: 2px; }
+.stappen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: stap; }
+.stap { border-top: 2px solid var(--ink); padding-top: 16px; }
+.stap small { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: .12em; color: var(--muted); text-transform: uppercase; margin-bottom: 6px; }
+.stap h3 { font-size: 19px; margin-bottom: 6px; }
+.stap p { color: var(--ink-2); font-size: 15.5px; }
+.goran { display: flex; gap: 22px; align-items: center; background: var(--cobalt); color: #fff; border-radius: 26px; padding: clamp(24px, 4vw, 40px); }
+.goran img { width: 92px; height: 92px; border-radius: 50%; border: 3px solid rgba(255,255,255,.9); object-fit: cover; flex: none; }
+.goran h2 { color: #fff; font-size: clamp(24px, 3.2vw, 32px); margin-bottom: 8px; }
+.goran p { opacity: .92; max-width: 60ch; }
+.goran .acties { margin-top: 18px; }
+.goran .btn-dark { background: #fff; color: var(--cobalt); }
+.goran a.tel { color: #fff; font-weight: 600; }
+footer { border-top: 1px solid var(--line); padding: 26px 0 40px; font-size: 13.5px; color: var(--muted); }
+footer .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .drie, .stappen, .krijg { grid-template-columns: 1fr; }
+  .goran { flex-direction: column; align-items: flex-start; }
+  header .btn span { display: none; }
+  header .btn { padding: 8px 13px; font-size: 13px; }
+  header img { height: 20px; }
+}
+</style>
 </head>
 <body>
+<header><div class="wrap">
+  <a href="https://www.go4itstudio.com/"><img src="/assets/go4it-logo.svg" alt="GO 4IT-Studio"></a>
+  <a class="btn btn-dark" href="https://www.go4itstudio.com/#websitecheck">Gratis websitecheck<span> aanvragen</span> →</a>
+</div></header>
+
 <main>
-<h1 style="font-size:24px;margin:0 0 8px">Persoonlijke websitechecks</h1>
-<p>Hier staan de websitechecks van GO 4IT-Studio. Elke check heeft een eigen, persoonlijke link. Heb je er een gekregen? Open dan precies die link.</p>
-<p>Zelf een gratis websitecheck aanvragen? Dat kan op <a href="https://www.go4itstudio.com/#websitecheck">go4itstudio.com</a>.</p>
+  <div class="hero"><div class="wrap">
+    <span class="tag">Websitecheck</span>
+    <h1>Hoe goed werkt jouw website <em>echt</em>?</h1>
+    <p class="lead">Ik bekijk je site zoals een klant dat doet: op de computer én op de telefoon. Je krijgt drie heldere cijfers en een persoonlijk verbeterplan, in gewone taal. Gratis en vrijblijvend.</p>
+    <div class="acties">
+      <a class="btn btn-dark" href="https://www.go4itstudio.com/#websitecheck">Vraag je gratis websitecheck aan →</a>
+      <a class="btn btn-licht" href="https://wa.me/31612378952">App me even</a>
+    </div>
+    <p class="link-noot">🔒 Heb je al een link van mij gekregen? Open die precies zoals je hem kreeg. Alleen met die link zie je je eigen check.</p>
+  </div></div>
+
+  <section><div class="wrap">
+    <h2>Drie cijfers die laten zien waar je staat</h2>
+    <p class="sub">Geen lange lijst met vaktermen, maar drie cijfers van 1 tot 10. Bij elk cijfer zie je wat goed gaat en wat beter kan.</p>
+    <div class="drie">
+      <div class="cijfer">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="#E9ECFD" stroke="#ECEEF3" stroke-width="7"/><circle cx="32" cy="32" r="26" fill="none" stroke="#3346D3" stroke-width="7" stroke-linecap="round" stroke-dasharray="122 164" transform="rotate(-90 32 32)"/></svg>
+        <h3>Commerciële kracht</h3>
+        <p>Helpt je site bezoekers naar een aanvraag? Uitstraling, je boodschap, vertrouwen en hoe makkelijk iemand contact met je opneemt.</p>
+      </div>
+      <div class="cijfer">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="#E3F6EA" stroke="#ECEEF3" stroke-width="7"/><circle cx="32" cy="32" r="26" fill="none" stroke="#0C8A4A" stroke-width="7" stroke-linecap="round" stroke-dasharray="145 164" transform="rotate(-90 32 32)"/></svg>
+        <h3>Technische gezondheid</h3>
+        <p>Is je site snel, veilig en goed te gebruiken op de telefoon? Gemeten, onder meer met Google PageSpeed.</p>
+      </div>
+      <div class="cijfer">
+        <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26" fill="#FFF1DC" stroke="#ECEEF3" stroke-width="7"/><circle cx="32" cy="32" r="26" fill="none" stroke="#C26A00" stroke-width="7" stroke-linecap="round" stroke-dasharray="104 164" transform="rotate(-90 32 32)"/></svg>
+        <h3>SEO-basis</h3>
+        <p>Kan Google je site goed lezen en begrijpen? Titels, koppen, opbouw, je bedrijfsgegevens en of je gevonden wordt in je eigen regio.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="grijs"><div class="wrap">
+    <h2>Wat je krijgt</h2>
+    <p class="sub">Een eigen, persoonlijke pagina met alles over jouw site. Prettig te lezen op je telefoon, en ook als PDF te downloaden.</p>
+    <ul class="krijg">
+      <li><span class="vink">✓</span><div><b>De punten die ik als eerste zou aanpakken</b><span>Zodat je weet waar je het meest mee wint.</span></div></li>
+      <li><span class="vink">✓</span><div><b>Een verbeterplan in gewone taal</b><span>Per punt wat ik zag, waarom het telt en wat je kunt doen.</span></div></li>
+      <li><span class="vink">✓</span><div><b>Je Google-bedrijfsprofiel erbij</b><span>Sterren, reviews en of je profiel goed aansluit op je site.</span></div></li>
+      <li><span class="vink">✓</span><div><b>Noemen AI-assistenten je bedrijf?</b><span>Een momentopname: word je genoemd door ChatGPT of Gemini als iemand een bedrijf zoals het jouwe zoekt?</span></div></li>
+    </ul>
+  </div></section>
+
+  <section><div class="wrap">
+    <h2>Zo werkt het</h2>
+    <div class="stappen">
+      <div class="stap"><small>Stap 1</small><h3>Je vraagt hem aan</h3><p>Vul je website in op go4itstudio.com. Meer is niet nodig.</p></div>
+      <div class="stap"><small>Stap 2</small><h3>Ik bekijk je site</h3><p>Tot tien pagina's, op de computer en op de telefoon. Elke check lees ik zelf na voordat je hem krijgt.</p></div>
+      <div class="stap"><small>Stap 3</small><h3>Je krijgt je link</h3><p>Binnen een werkdag hoor je van me, met de link naar je persoonlijke check.</p></div>
+    </div>
+  </div></section>
+
+  <section style="padding-top:0"><div class="wrap">
+    <div class="goran">
+      <img src="/assets/goran.jpg" alt="Goran Živanović">
+      <div>
+        <h2>Benieuwd hoe jouw site ervoor staat?</h2>
+        <p>Ik ben Goran, van GO 4IT-Studio in Medemblik. Je spreekt mij direct, en een websitecheck is gratis en vrijblijvend.</p>
+        <div class="acties">
+          <a class="btn btn-dark" href="https://www.go4itstudio.com/#websitecheck">Vraag je gratis websitecheck aan →</a>
+          <a class="tel" href="tel:+31612378952">06 123 789 52</a>
+        </div>
+      </div>
+    </div>
+  </div></section>
 </main>
+
+<footer><div class="wrap">
+  <span>GO 4IT-Studio · Medemblik · KvK 77884779 · 06 123 789 52 · <a href="https://www.go4itstudio.com/">go4itstudio.com</a></span>
+  <span>Je persoonlijke check is alleen te openen met je eigen link.</span>
+</div></footer>
 </body>
 </html>
